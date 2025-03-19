@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juwara Coffee - Premium Coffee Experience</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Nikmati pengalaman kopi premium dengan Juwara Coffee. Kopi terbaik dari biji pilihan, diseduh dengan teknik terbaik untuk rasa yang sempurna.">
+    <meta name="keywords" content="kopi premium, Juwara Coffee, specialty coffee, biji kopi terbaik, kopi arabika, kopi robusta">
+    <meta name="author" content="Juwara Coffee">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (SEO untuk Sosial Media) -->
+    <meta property="og:title" content="Juwara Coffee - Premium Coffee Experience">
+    <meta property="og:description" content="Nikmati kopi premium dari biji pilihan terbaik. Rasa sempurna untuk pengalaman terbaik.">
+    <meta property="og:image" content="https://juwaracoffe.com/juwara-coffee-banner.jpg">
+    <meta property="og:url" content="https://juwaracoffe.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card (SEO untuk Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Juwara Coffee - Premium Coffee Experience">
+    <meta name="twitter:description" content="Rasakan kopi premium terbaik dari Juwara Coffee.">
+    <meta name="twitter:image" content="https://example.com/juwara-coffee-banner.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://juwaracoffe.com">
+    
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- Heroicons -->
+    <script src="https://unpkg.com/@heroicons/vue@2.0.16/dist/heroicons.min.js"></script>
+    <!-- Custom styles -->
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            light: '#D2B48C',
+                            DEFAULT: '#8B4513',
+                            dark: '#5D2906',
+                            cream: '#FFF8DC',
+                            accent: '#C87941'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-coffee-cream">
+    <!-- Background pattern -->
+    <div class="bg-pattern"></div>
+
+    <!-- Decorative coffee beans -->
+    <div id="decorative-elements"></div>
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full bg-transparent text-white z-50 shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-coffee-light" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="text-2xl font-bold">JuwaraCoffe</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="animated-link hover:text-coffee-light transition duration-300">Home</a>
+                <a href="#about" class="animated-link hover:text-coffee-light transition duration-300">About</a>
+                <a href="#services" class="animated-link hover:text-coffee-light transition duration-300">Services</a>
+                <a href="#why" class="animated-link hover:text-coffee-light transition duration-300">Why Us</a>
+                <a href="#contact" class="animated-link hover:text-coffee-light transition duration-300">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-coffee-dark">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="hover:text-coffee-light transition duration-300">Home</a>
+                <a href="#about" class="hover:text-coffee-light transition duration-300">About</a>
+                <a href="#services" class="hover:text-coffee-light transition duration-300">Services</a>
+                <a href="#why" class="hover:text-coffee-light transition duration-300">Why Us</a>
+                <a href="#contact" class="hover:text-coffee-light transition duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Home Section -->
+    <section id="home" class="section min-h-screen flex items-center justify-center bg-cover bg-center parallax-bg"
+        role="banner"
+        style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"
+        aria-label="Hero section with coffee background">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                Welcome to <span class="text-coffee-light">JuwaraCoffe</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-8">Experience the finest coffee in town</p>
+            <a href="#about"
+                class="bg-coffee-dark hover:bg-coffee text-gray-300 font-bold py-3 px-8 rounded-full transition duration-300 inline-block">
+                Discover More
+            </a>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="relative py-20 overflow-hidden">
+        <!-- Decorative Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-full h-full">
+                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <pattern id="coffee-pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="currentColor" class="text-coffee-dark" />
+                        <path d="M5 5 Q 7 3, 9 5 T 13 5" stroke="currentColor" fill="none" class="text-coffee-accent" />
+                    </pattern>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#coffee-pattern)" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Floating Coffee Beans (Decorative Elements) -->
+        <div class="absolute hidden md:block">
+            <svg class="coffee-bean-1 text-coffee-light opacity-20" width="120" height="200" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M2 21v-2h18v2H2zM12 8.66l6 2.73v-.04L12 5.27l-6 6.08 6 2.73z" />
+            </svg>
+            <svg class="coffee-bean-2 text-coffee-accent opacity-20" width="80" height="80" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M2 21v-2h18v2H2zM12 8.66l6 2.73v-.04L12 5.27l-6 6.08 6 2.73z" />
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header with Animation -->
+            <div class="text-center mb-16" id="about-header">
+                <h2 class="text-3xl md:text-5xl font-bold text-coffee-dark mb-4 opacity-0">About Us</h2>
+                <div class="w-24 h-1 bg-coffee-accent mx-auto opacity-0" id="about-underline"></div>
+                <p class="mt-4 text-coffee-dark/70 italic max-w-2xl mx-auto opacity-0" id="about-tagline">
+                    Crafting extraordinary coffee experiences since 2018
+                </p>
+            </div>
+
+            <!-- Content Container with Shadow and Border -->
+            <div class="bg-white rounded-xl shadow-2xl border border-coffee-light/20 overflow-hidden">
+                <div class="flex flex-col md:flex-row items-center">
+                    <!-- Image Column with Hover Effect -->
+                    <div class="md:w-1/2 overflow-hidden" id="about-image-container">
+                        <div class="relative overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Coffee beans"
+                                class="w-full h-[676px] object-cover transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-coffee-dark/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <span class="text-white text-xl font-medium"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Content with Staggered Animation -->
+                    <div class="md:w-1/2 p-8 md:p-12" id="about-content">
+                        <h3
+                            class="text-2xl md:text-3xl font-semibold text-coffee-dark mb-6 opacity-0 about-content-element">
+                            Our Story
+                        </h3>
+                        <p class="text-gray-700 mb-6 opacity-0 about-content-element">
+                            JuwaraCoffe was founded in 2018 with a simple mission: to provide the highest quality coffee
+                            experience to our customers. We source our beans directly from sustainable farms around the
+                            world, ensuring fair trade practices and exceptional flavor profiles.
+                        </p>
+                        <p class="text-gray-700 mb-8 opacity-0 about-content-element">
+                            Our master roasters carefully craft each batch to bring out the unique characteristics of
+                            every bean. We believe that great coffee is an art form, and we're dedicated to perfecting
+                            that art with every cup we serve.
+                        </p>
+
+                        <!-- Animated Feature List -->
+                        <div class="space-y-4 opacity-0 about-content-element">
+                            <div
+                                class="flex items-center p-3 bg-coffee-light/10 rounded-lg transform transition-transform hover:translate-x-2">
+                                <span
+                                    class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-coffee-accent/20 text-coffee-dark rounded-full mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                    </svg>
+                                </span>
+                                <span class="text-coffee-dark font-medium">Premium Quality Beans</span>
+                            </div>
+
+                            <div
+                                class="flex items-center p-3 bg-coffee-light/10 rounded-lg transform transition-transform hover:translate-x-2">
+                                <span
+                                    class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-coffee-accent/20 text-coffee-dark rounded-full mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8 8V7a4 4 0 118 0v1h1a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2h1zm3 0V7a2 2 0 104 0v1H11z" />
+                                    </svg>
+                                </span>
+                                <span class="text-coffee-dark font-medium">Sustainable Practices</span>
+                            </div>
+
+                            <div
+                                class="flex items-center p-3 bg-coffee-light/10 rounded-lg transform transition-transform hover:translate-x-2">
+                                <span
+                                    class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-coffee-accent/20 text-coffee-dark rounded-full mr-4 animated-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M10 5h4m-4 6v4m-6 2V9a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2zm0 0h4m12 0h-4m-6-6h8" />
+                                    </svg>
+                                </span>
+                                <span class="text-coffee-dark font-medium">Expert Baristas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+
+    <!-- Why JuwaraCoffe Section -->
+    <section id="why" class="section py-16 bg-coffee-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Juwara Coffe</h2>
+                <div class="w-24 h-1 bg-coffee-light mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Reason 1 -->
+                <div class="text-center">
+                    <div class="bg-coffee-light rounded-full p-4 inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-coffee-dark" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Quality Guaranteed</h3>
+                    <p class="text-gray-300">We never compromise on quality, from bean selection to brewing techniques.
+                    </p>
+                </div>
+                <!-- Reason 2 -->
+                <div class="text-center">
+                    <div class="bg-coffee-light rounded-full p-4 inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-coffee-dark" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fast Service</h3>
+                    <p class="text-gray-300">Our efficient team ensures you get your coffee quickly without sacrificing
+                        quality.</p>
+                </div>
+                <!-- Reason 3 -->
+                <div class="text-center">
+                    <div class="bg-coffee-light rounded-full p-4 inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-coffee-dark" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Expert Baristas</h3>
+                    <p class="text-gray-300">Our team of skilled baristas are passionate about creating the perfect cup
+                        for you.</p>
+                </div>
+                <!-- Reason 4 -->
+                <div class="text-center">
+                    <div class="bg-coffee-light rounded-full p-4 inline-block mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-coffee-dark" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Affordable Prices</h3>
+                    <p class="text-gray-300">We offer premium coffee experiences at reasonable prices that won't break
+                        the bank.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <!-- Background Decorations -->
+    <div class="overflow-hidden">
+        <svg class="floating-beans floating top-20 left-10" width="100" height="100" viewBox="0 0 24 24">
+            <path class="bean-decoration"
+                d="M12,4.5C7,4.5,2.73,7.61,1,12c1.73,4.39,6,7.5,11,7.5s9.27-3.11,11-7.5C21.27,7.61,17,4.5,12,4.5z M12,17 c-2.76,0-5-2.24-5-5s2.24-5,5-5s5,2.24,5,5S14.76,17,12,17z" />
+        </svg>
+        <svg class="floating-beans floating floating-delay-1 top-40 right-20" width="120" height="120"
+            viewBox="0 0 24 24">
+            <path class="bean-decoration"
+                d="M9.5,6.5v3h-3v-3H9.5 M11,5H5v6h6V5L11,5z M9.5,14.5v3h-3v-3H9.5 M11,13H5v6h6V13L11,13z M17.5,6.5v3h-3v-3H17.5 M19,5h-6v6h6V5L19,5z M17.5,14.5v3h-3v-3H17.5 M19,13h-6v6h6V13L19,13z" />
+        </svg>
+        <svg class="floating-beans floating floating-delay-2 bottom-20 left-1/4" width="80" height="80"
+            viewBox="0 0 24 24">
+            <path class="bean-decoration"
+                d="M18.5,3H6C4.9,3,4,3.9,4,5v5.71c0,3.83,2.95,7.18,6.78,7.29c3.96,0.12,7.22-3.06,7.22-7v-1h0.5c1.93,0,3.5-1.57,3.5-3.5 S20.43,3,18.5,3z M16,5v3H6V5H16z M12,16c-2.76,0-5-2.24-5-5h5V16z M18.5,8H18V5h0.5C19.33,5,20,5.67,20,6.5S19.33,8,18.5,8z" />
+        </svg>
+        <svg class="floating-beans floating bottom-10 right-10" width="90" height="90" viewBox="0 0 24 24">
+            <path class="bean-decoration"
+                d="M20,4H4v2h16V4z M4,7h16v1H4V7z M22,9H2v10c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V9z M12,19c-2.76,0-5-2.24-5-5 s2.24-5,5-5s5,2.24,5,5S14.76,19,12,19z" />
+        </svg>
+    </div>
+
+    <!-- Services Section -->
+
+    <section id="services" class="section py-10 mb-0 bg-coffee-cream relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-0" id="services-title">
+                <div class="container text-center mb-0 mx-auto px-4 relative z-10" id="services-title">
+                    <h2 class="text-4xl md:text-6xl font-bold text-coffee-dark mb-4">Our Services</h2>
+                    <div class="flex justify-center items-center mb-6">
+                        <div class="w-12 h-1 bg-coffee-medium"></div>
+                        <div class="mx-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-coffee-medium" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12.75 8.325l1.5 1.5-1.5 1.5m-7.5-3l-1.5 1.5 1.5 1.5m9 3c1.5-1.5 3-3 3-6h-12c0 3 1.5 4.5 3 6 1.5-1.5 3-3 3-6h0m-3 8.4c3 0 6-2.4 6-4.8h-12c0 2.4 3 4.8 6 4.8z" />
+                            </svg>
+                        </div>
+                        <div class="w-12 h-1 bg-coffee-medium"></div>
+                    </div>
+                    <p class="text-gray-700 mt-2 max-w-2xl mx-auto text-lg">We offer a variety of coffee experiences to
+                        satisfy every palate and occasion. From specialty brews, we're devoted to the perfect cup.</p>
+                </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12" id="services-cards">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="relative overflow-hidden">
+                        <img src="img/img-1.jpg" alt="Specialty Coffee" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 right-0 bg-coffee-dark text-white py-1 px-3 rounded-bl-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 inline-block mr-1">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.499z" />
+                            </svg>
+                            Premium
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="flex items-center mb-3">
+                            <div class="p-2 bg-coffee-light rounded-full mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="white" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 1-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21a48.25 48.25 0 0 1-8.135-.687c-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-coffee-dark">Specialty Coffee</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Experience our signature blends and single-origin coffees,
+                            carefully selected and roasted to perfection.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-coffee-medium font-bold">From 10K</span>
+                            <button
+                                class="bg-coffee-dark hover:bg-coffee-medium text-white py-2 px-4 rounded-full transition duration-300">
+                                Learn More
+                            </button>
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 text-coffee-light opacity-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-16 h-16">
+                                <path
+                                    d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="relative overflow-hidden">
+                        <img src="img/img-3.jpg" alt="Coffee Workshops" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 right-0 bg-coffee-medium text-white py-1 px-3 rounded-bl-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 inline-block mr-1">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.26 10.147a60.436 60.436 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.905 59.905 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                            </svg>
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="flex items-center mb-3">
+                            <div class="p-2 bg-coffee-medium rounded-full mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="white" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-coffee-dark">Coffee Workshops</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Learn the art of coffee making with our expert baristas in
+                            interactive and engaging workshops.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-coffee-medium font-bold">From 35K</span>
+                            <button
+                                class="bg-coffee-dark hover:bg-coffee-medium text-white py-2 px-4 rounded-full transition duration-300">
+                                Book Now
+                            </button>
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 text-coffee-light opacity-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-16 h-16">
+                                <path
+                                    d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
+                                <path
+                                    d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
+                                <path
+                                    d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="relative overflow-hidden">
+                        <img src="img/img-4.jpg" alt="Catering Services" class="w-full h-48 object-cover">
+                        <div class="absolute top-0 right-0 bg-coffee-dark text-white py-1 px-3 rounded-bl-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 inline-block mr-1">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V3a.75.75 0 0 1 .75-.75A2.25 2.25 0 0 1 16.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4.42.777.672 1.123.23.312.48.61.75.887l.675.75m-4.367-3.362 1.125-1.125m1.125-1.125 1.125-1.125m1.125-1.125 1.125-1.125m0 0L9.75 9" />
+                            </svg>
+                            Exclusive
+                        </div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="flex items-center mb-3">
+                            <div class="p-2 bg-coffee-light rounded-full mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="white" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-coffee-dark">Catering Services</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">Elevate your events with our premium coffee catering services,
+                            tailored to your specific needs.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-coffee-medium font-bold">Custom Quote</span>
+                            <button
+                                class="bg-coffee-dark hover:bg-coffee-medium text-white py-2 px-4 rounded-full transition duration-300">
+                                Get Quote
+                            </button>
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 text-coffee-light opacity-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-16 h-16">
+                                <path fill-rule="evenodd"
+                                    d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- "View All Services" Button -->
+            <div class="flex justify-center mt-[100px] mb-0">
+                <button
+                    class="bg-coffee-dark hover:bg-coffee-medium text-white py-3 px-8 rounded-full transition duration-300 flex items-center group shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <span class="font-medium">View All Services</span>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Call to Action -->
+    <div class="bg-coffee-dark rounded-xl p-8 shadow-xl transform hover:-translate-y-2 transition duration-300"
+        id="cta-section">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Ready to experience the perfect brew?
+                </h3>
+                <p class="text-coffee-cream opacity-90">Join us for a tasting session or book a workshop today.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button
+                    class="bg-white text-coffee-dark font-bold py-3 px-6 rounded-full hover:bg-coffee-cream transition duration-300 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                    </svg>
+                    Book a Visit
+                </button>
+                <button
+                    class="bg-coffee-light text-white font-bold py-3 px-6 rounded-full hover:bg-coffee-medium transition duration-300 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                    </svg>
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-coffee-dark mb-4">Contact Us</h2>
+                <div class="w-24 h-1 bg-coffee-light mx-auto"></div>
+                <p class="text-gray-700 mt-4 max-w-2xl mx-auto">Have questions or want to make a reservation? Reach out
+                    to us!</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 bg-coffee-cream p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-coffee-dark mb-6">Send Us a Message</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-coffee-dark mb-2">Your Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-coffee-accent">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-coffee-dark mb-2">Your Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-coffee-accent">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-coffee-dark mb-2">Your Message</label>
+                            <textarea id="message" rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-coffee-accent"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-coffee hover:bg-coffee-dark text-white font-bold py-2 px-6 rounded-lg transition duration-300">Send
+                            Message</button>
+                    </form>
+                </div>
+                <div class="md:w-1/2 bg-coffee-dark p-8 rounded-lg shadow-lg text-white">
+                    <h3 class="text-2xl font-semibold mb-6">Visit Our Coffee Shop</h3>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-medium mb-2 text-coffee-light">Location</h4>
+                        <p class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-coffee-light" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>123 Coffee Street, Brewville, BC 98765</span>
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-medium mb-2 text-coffee-light">Opening Hours</h4>
+                        <p class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-coffee-light" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Monday - Friday: 7:00 AM - 8:00 PM<br>Saturday - Sunday: 8:00 AM - 9:00 PM</span>
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-medium mb-2 text-coffee-light">Contact</h4>
+                        <p class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-coffee-light" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>Phone: (555) 123-4567</span>
+                        </p>
+                        <p class="flex items-start mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-coffee-light" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>Email: info@juwaracoffe.com</span>
+                        </p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="bg-coffee-light hover:bg-coffee text-coffee-dark p-2 rounded-full transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="bg-coffee-light hover:bg-coffee text-coffee-dark p-2 rounded-full transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="bg-coffee-light hover:bg-coffee text-coffee-dark p-2 rounded-full transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 1.281.18 2.562.801 3.589-.706.07-1.369-.074-1.947-.365.188 1.102.699 2.117 1.432 2.95-.931.196-1.743.094-2.51-.217.366.908 1.096 1.66 1.925 2.107-1.267.118-2.535.071-3.648-.319 1.33 1.296 2.822 1.763 4.548 1.621 5.312-.547 9.93-4.77 10.335-9.994.055-.429.055-.845.049-1.27z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="bg-coffee-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-coffee-light" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span class="text-2xl font-bold">JuwaraCoffe</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Premium Coffee Experience</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#home" class="hover:text-coffee-light transition duration-300">Home</a>
+                    <a href="#about" class="hover:text-coffee-light transition duration-300">About</a>
+                    <a href="#services" class="hover:text-coffee-light transition duration-300">Services</a>
+                    <a href="#why" class="hover:text-coffee-light transition duration-300">Why Us</a>
+                    <a href="#contact" class="hover:text-coffee-light transition duration-300">Contact</a>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-gray-400">&copy; 2023 JuwaraCoffe. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  
+
+
+    <!-- Floating AI Chatbot Icon -->
+    <a href="chatbot.html" class="floating-chat-icon group" aria-label="Chat with our AI assistant">
+        <div class="icon-wrapper">
+            <div class="pulse-ring"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.678 3.348-3.97z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <span class="chat-label">Chat with AI</span>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create the pulse animation
+            gsap.to('.pulse-ring', {
+                opacity: 0.5,
+                scale: 1.5,
+                duration: 1.5,
+                repeat: -1,
+                ease: "power2.out",
+                stagger: 0.2
+            });
+
+            // Create a bouncing effect for the icon
+            gsap.to('.floating-chat-icon', {
+                y: '-10px',
+                duration: 1.5,
+                repeat: -1,
+                yoyo: true,
+                ease: "power1.inOut"
+            });
+        });
+    </script>
+      <style>
+        .floating-chat-icon {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-chat-icon:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-wrapper {
+            position: relative;
+            background-color: #6366f1;
+            border-radius: 9999px;
+            padding: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .pulse-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #6366f1;
+            opacity: 0;
+            transform: scale(1);
+        }
+
+        .chat-label {
+            margin-top: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #4f46e5;
+            background-color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+    </style>
+
+<!-- Tambahkan ini di bagian head dokumen Anda untuk warna kustom -->
+<link rel="stylesheet" href="css/style.css">
+    <!-- JavaScript for animations and mobile menu -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Decorative elements */
+.coffee-bean {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background-color: #5D2906;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.coffee-bean::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: #8B4513;
+    border-radius: 50%;
+}
+
+.steam {
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    filter: blur(5px);
+    opacity: 0;
+}
+
+/* Background pattern */
+.bg-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#D2B48C 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Enhanced section animations */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Interactive elements */
+.hover-float {
+    transition: transform 0.3s ease;
+}
+
+.hover-float:hover {
+    transform: translateY(-10px);
+}
+
+/* Parallax effect */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Animated underline for links */
+.animated-link {
+    position: relative;
+}
+
+.animated-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #D2B48C;
+    transition: width 0.3s ease;
+}
+
+.animated-link:hover::after {
+    width: 100%;
+}   :root {
+    --color-coffee-dark: #4A3520;
+    --color-coffee-light: #BA9065;
+    --color-coffee-accent: #D4A66A;
+}
+
+.text-coffee-dark {
+    color: var(--color-coffee-dark);
+}
+
+.text-coffee-light {
+    color: var(--color-coffee-light);
+}
+
+.text-coffee-accent {
+    color: var(--color-coffee-accent);
+}
+
+.bg-coffee-dark {
+    background-color: var(--color-coffee-dark);
+}
+
+.bg-coffee-light {
+    background-color: var(--color-coffee-light);
+}
+
+.bg-coffee-accent {
+    background-color: var(--color-coffee-accent);
+}
+
+.border-coffee-light {
+    border-color: var(--color-coffee-light);
+}
+
+/* Set initial states for animations */
+#about-header h2,
+#about-tagline {
+    transform: translateY(20px);
+}
+
+.about-content-element {
+    transform: translateY(15px);
+}
+
+.coffee-bean-1 {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+}
+
+.coffee-bean-2 {
+    position: absolute;
+    bottom: 25%;
+    left: 8%;
+} @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --coffee-dark: #3C2A21;
+    --coffee-medium: #6B4F37;
+    --coffee-light: #AD8E70;
+    --coffee-cream: #F6F1E9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--coffee-cream);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+.bg-coffee-dark {
+    background-color: var(--coffee-dark);
+}
+
+.bg-coffee-medium {
+    background-color: var(--coffee-medium);
+}
+
+.bg-coffee-light {
+    background-color: var(--coffee-light);
+}
+
+.bg-coffee-cream {
+    background-color: var(--coffee-cream);
+}
+
+.text-coffee-dark {
+    color: var(--coffee-dark);
+}
+
+.text-coffee-medium {
+    color: var(--coffee-medium);
+}
+
+.text-coffee-light {
+    color: var(--coffee-light);
+}
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.floating-beans {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.bean-decoration path {
+    fill: var(--coffee-medium);
+}
+
+.icon-container {
+    transition: transform 0.3s ease;
+}
+
+.icon-container:hover {
+    transform: rotate(15deg);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-delay-1 {
+    animation-delay: 1s;
+}
+
+.floating-delay-2 {
+    animation-delay: 2s;
+}  .floating-contact-icon {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        background-color: #4F46E5; /* Indigo color */
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .floating-contact-icon:hover {
+        width: 160px;
+        border-radius: 30px;
+        background-color: #4338CA; /* Darker indigo on hover */
+    }
+
+    .floating-contact-icon svg {
+        min-width: 24px;
+    }
+
+    .floating-contact-icon span {
+        white-space: nowrap;
+        margin-left: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .floating-contact-icon:hover span {
+        opacity: 1;
+    }
+
+    .icon-pulse {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #818CF8; /* Lighter indigo for pulse */
+        opacity: 0;
+        animation: pulse 2s infinite;
+        pointer-events: none;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            opacity: 0.7;
+        }
+        70% {
+            transform: scale(1.1);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(0.95);
+            opacity: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .floating-contact-icon {
+            right: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+        }
+    }
+//Floating Icon
+.floating-chat-icon {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.floating-chat-icon:hover {
+    transform: translateY(-5px);
+}
+
+.icon-wrapper {
+    position: relative;
+    background-color: #6366f1;
+    border-radius: 9999px;
+    padding: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #6366f1;
+    opacity: 0;
+    transform: scale(1);
+}
+
+.chat-label {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #4f46e5;
+    background-color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
